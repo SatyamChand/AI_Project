@@ -1,12 +1,12 @@
 import manualinit as man
 import autoinitializer as auto
-from projectsupport import *
 
 Section={}
 Subject={}
 Seat=[]
 #print(Seat)
 Subjects={}
+
 
 def sortedSubjects():
     #print(Subject)
@@ -26,37 +26,6 @@ def sortedSubjects():
         Subjects[maxi]=Sub[maxi]
         Sub.pop(maxi)
  
-def check_possible_arrangement():
-    Day_arrangement=[[len(Seat),0,0]]
-    print(len(allocated_sec))
-    print(allocated_sec)
-    for i in allocated_sec:
-        print(i)
-        count=0
-        for j in allocated_sec[i]:
-            count+=len(Section[j])
-        print(count)
-
-        for j in allocated_sec[i]:
-            print('\t',j)
-            for k in allocated_sec:
-                print('\t\t',k)
-                if i!=k  and j in allocated_sec[k]:
-                    flag=1
-                    print(i,' != ',k,' and ',j ,' in ',allocated_sec[k])
-                    for l in range(len(Day_arrangement)):
-                        if Day_arrangement[l][0]+count<=len(Seat) and i not in Day_arrangement[l]:
-                            print('\t\t',k,' not in ', l)
-                            Day_arrangement[l].append(i)
-                            Day_arrangement[l][0]+=count
-                            print('Added on day ',l)
-                            flag=0
-                            break
-                    if flag:
-                        Day_arrangement.append([count,i])
-                        print('Added new day')
-                        
-    print(Day_arrangement)
 
 def arrangement():
     #print(Subjects)
@@ -89,6 +58,7 @@ def arrangement():
                     Seat[z][1]=j
                     Seat[z][2]=i
                     break;
+                    
 
 def main():
     print('Would you like : \n1. Results with predefined constraints\n2. Manual inputs')
@@ -107,5 +77,6 @@ def main():
     #print(Subjects)
     arrangement()
     print(Seat)
+
 
 main()
