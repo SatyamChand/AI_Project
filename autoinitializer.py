@@ -8,7 +8,7 @@ def section_creator(Section):    #to create and assign registration numbers to s
         #print(name,' ',roll)
         Section[name]=roll
         
-def subject_allocator(Subject,Seat):
+def subject_allocator(Section,Subject,allocated_sec,Seat):
     Subject['Python']=[1001,1002,1003,1004]
     Subject['DBMS']=[1005,1006,1007,1008,1009,1010]
     Subject['AI']=[1011,1012,1013,1014,1015]

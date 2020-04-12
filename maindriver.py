@@ -6,6 +6,7 @@ Subject={}
 Seat=[]
 #print(Seat)
 Subjects={}
+allocated_sec={}
 
 
 def sortedSubjects():
@@ -40,7 +41,7 @@ def arrangement():
                 print('Less seats available')
             else:
                 print('Arrangment without same Subject not sitting next to each other not possible')
-            return;
+            return 0
     print('Possible')
     for i in Subjects:
         for j in Subjects[i]:
@@ -58,6 +59,7 @@ def arrangement():
                     Seat[z][1]=j
                     Seat[z][2]=i
                     break;
+    return 1
                     
 
 def main():
@@ -71,12 +73,13 @@ def main():
         print("Wrong choice")
     op.section_creator(Section)
     #print(Section)
-    op.subject_allocator(Subject,Seat)
+    op.subject_allocator(Section,Subject,allocated_sec,Seat)
     print('-------------')
     sortedSubjects()
     #print(Subjects)
-    arrangement()
-    print(Seat)
+    flag=arrangement()
+    if flag:
+    	print(Seat,'\n')
 
 
 main()

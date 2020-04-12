@@ -9,7 +9,7 @@ def section_creator(Section):    #to create and assign registration numbers to s
         Section[name]=roll
 
 
-def subject_allocator(Subject,Seat):
+def subject_allocator(Section,Subject,allocated_sec,Seat):
     choice='y'
     while choice=='y':              #to ue change to y
         name=input("\nEnter the subject name : ")
@@ -27,9 +27,9 @@ def subject_allocator(Subject,Seat):
             #print(i,' ',Section[j])
             for k in Section[j]:
                 Subject[i].append(k)
-    seat_creator()
+    seat_creator(Seat)
 
-def seat_creator():
+def seat_creator(Seat):
     seat=int(input("\nEnter the no. of seats available : "))
     for i in range(1,seat+1):
         Seat.append([i,0,''])
