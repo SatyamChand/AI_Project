@@ -30,7 +30,7 @@ def main():
         op=man
     else:
         print("Wrong choice")
-    op.section_creator(Section,cursor)
+    op.section_creator(cursor)
     #print(Section)
     op.subject_allocator(Seat,cursor)
     assign_days(Day_arrangement,cursor)
