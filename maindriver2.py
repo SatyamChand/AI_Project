@@ -23,7 +23,7 @@ def main():
     cursor=db.cursor()
     #print('Would you like : \n1. Results with predefined constraints\n2. Manual inputs')
     #choice=int(input('Please select : '))
-    choice=1								#currently set to auto
+    choice=2								#currently set to auto
     if choice==1:
         op=auto
     elif choice==2:

@@ -16,16 +16,17 @@ def assign_days(Day_arrangement,cursor):
     subs=cursor.fetchall()
     Subs=[]
     for i in subs:
-    	print(i)
+    	#print(i)
     	Subs.append(i[0])
     Arrangement=dict((sub,[1,2,3,4,5,6,7]) for sub in Subs)
-    print(Arrangement)
+    #print(Arrangement)
     Constraints=[
         (Subs,day_check)
     ]
     Problem=CspProblem(Subs,Arrangement,Constraints)
     output=backtrack(Problem)
     #print(output)
+    print()
     for y,z in output.items():
         print('Day ',z,'==>',y)
         if z not in Day_arrangement:
@@ -63,7 +64,7 @@ def arrangement(Seat,Seats,Day_arrangement):
 	Subs=[]
 	Size=[]
 	for i in Day_arrangement:
-		print(Day_arrangement[i])
+		#print(Day_arrangement[i])
 		Subs.append(Day_arrangement[i])
 		Seats.append(copy.deepcopy(Seat))
 
@@ -75,14 +76,14 @@ def arrangement(Seat,Seats,Day_arrangement):
 				if y>(len(Seat)+1)//2:
 					print("not possible")
 					return 1
-				temp_size.append(y)
+				temp_size.append(y*2-1)
 		temp_sum=sum(temp_size)
 		#print(temp_size)
 		if temp_sum>len(Seat):
 			print("not possible")
 			return 1
 		Size.append(max(temp_sum,max(temp_size)))
-	print(Size)
+	#print(Size)
 
 	for i in range(len(Subs)):
 		z=-1
